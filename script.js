@@ -6,7 +6,7 @@ var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 var special = ['!','@','#','$','%','^','&','*','(',')','{','}','[',']', '<', '>', '.'];
 var lowerCase = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];    
 var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
-var passwordcreated = []
+var passwordcreated = ['']
 
 //Create prompts for password criteria
 var passwordLength = parseInt(window.prompt ("Your password must be between 8 and 128 characters in length. Please enter password length:"));
@@ -39,7 +39,6 @@ while (
    }
 
 //Combine arrays based on selected criteria
-  //How do I take from one array and push to another array? How do I fill in the remaining spaces of the array?
 if (includeNumber) {
   passwordcreated = numbers.concat(passwordcreated)
 }
@@ -58,6 +57,7 @@ if (includeUpper) {
 for (var i = 0; i < passwordLength; i++){
 var createRandom = Math.floor(Math.random() * passwordcreated.length);
 password = password + passwordcreated[createRandom];
+console.log(password);
 }
 return password;
 }
